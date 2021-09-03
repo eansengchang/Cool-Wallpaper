@@ -43,19 +43,20 @@ function setup() {
 
 
 function draw() {
+
+	fill(206, 216, 227)
 	if (hour() > 20) {
 		background(nightBackground)
 	} else if (hour() > 16) {
 		background(eveningBackground)
 	} else {
 		background(dayBackground)
+		fill(255)
 	}
 
 	textAlign(CENTER)
+	textSize(80)
 	let time = `${floor(hour() / 10)}${hour() % 10}:${floor(minute() / 10)}${minute() % 10}:${floor(second() / 10)}${second() % 10}`
-	fill(206, 216, 227)
-	fill(255)
-	textSize(70)
 	text(time, width / 2, 250)
 
 	textAlign(LEFT)
@@ -67,7 +68,6 @@ function draw() {
 
 	if (weather) {
 		textAlign(RIGHT);
-
 		textSize(40)
 		text(`${floor(weather.main.temp - 273)}°C`, width - 40, 60)
 		textSize(20)
@@ -77,4 +77,4 @@ function draw() {
 
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
-  }
+}
