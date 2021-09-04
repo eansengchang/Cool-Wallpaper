@@ -63,7 +63,7 @@ function draw() {
 	textSize(40)
 	let now = new Date();
 	let dayOfWeek = now.getDay()
-	let date = `${weekDay[dayOfWeek + 1]} ${day()} ${monthString[month() + 1]}`
+	let date = `${weekDay[dayOfWeek - 1]} ${day()} ${monthString[month() - 1]}`
 	text(date, 50, height - 100)
 
 	if (weather) {
